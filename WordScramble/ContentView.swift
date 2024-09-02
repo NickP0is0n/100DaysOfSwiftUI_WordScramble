@@ -12,13 +12,16 @@ struct ContentView: View {
     var body: some View {
         Text("123")
     }
-    
-    func testBundles() {
-        if let fileUrl = Bundle.main.url(forResource: "somefile", withExtension: "txt") {
-            if let fileContents = try? String(contentsOf: fileUrl) {
-                 // we loaded the file into the string
-            }
-        }
+
+    func testStrings() {
+        let input = """
+        a
+        b
+        c
+        """
+        let letters = input.components(separatedBy: "\n")
+        let letter = letters.randomElement()
+        let trimmed = letter?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
