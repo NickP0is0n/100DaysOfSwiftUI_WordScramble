@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    let people = ["Henry", "Nick", "Dawn"]
+
     var body: some View {
-        List(people, id: \.self) {
-            Text($0)
+        Text("123")
+    }
+    
+    func testBundles() {
+        if let fileUrl = Bundle.main.url(forResource: "somefile", withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: fileUrl) {
+                 // we loaded the file into the string
+            }
         }
     }
 }
